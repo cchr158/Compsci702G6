@@ -7,11 +7,11 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.app.group_6.galeshapley.MainActivity">
+    tools:context=".UI.MainActivity">
 
     <ScrollView
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:scrollbars="none">
         <TableLayout
@@ -24,11 +24,11 @@
                 android:gravity="center_horizontal">
 
                 <TextView
+                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="Med Student Table"
-                    android:id="@+id/textView" />
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
             </TableRow>
 
             <TableRow
@@ -37,31 +37,31 @@
                 android:gravity="center">
 
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
                     android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
                     android:gravity="left">
                     <TextView
+                        android:id="@+id/textView2"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:textAppearance="?android:textAppearanceMedium"
-                        android:textStyle="bold"
                         android:text="Students:"
-                        android:id="@+id/textView2" />
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textStyle="bold" />
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
                     android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
                     android:gravity="right">
 
                     <TextView
+                        android:id="@+id/textView3"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:textAppearance="?android:textAppearanceMedium"
-                        android:textStyle="bold"
                         android:text="Preferance Lists:"
-                        android:id="@+id/textView3" />
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
             </TableRow>
@@ -71,54 +71,26 @@
                 android:layout_height="fill_parent"
                 android:gravity="center">
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
                     android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
                     android:gravity="left">
                     <EditText
+                        android:id="@+id/editText"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:hint="Student 1"
-                        android:id="@+id/editText" />
+                        android:hint="Student 1" />
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
                     android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
                     android:gravity="left">
                     <EditText
+                        android:id="@+id/editText2"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:hint="list delimated by &quot;,&quot;"
-                        android:id="@+id/editText2" />
-                </LinearLayout>
-
-            </TableRow>
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center">
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
-                    android:layout_width="fill_parent"
-                    android:gravity="left">
-                    <EditText
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:hint="Student 2"
-                        android:id="@+id/editText3" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
-                    android:layout_width="fill_parent"
-                    android:gravity="left">
-                    <EditText
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:hint="list delimated by &quot;,&quot;"
-                        android:id="@+id/editText4" />
+                        android:hint="list delimated by &quot;,&quot;" />
                 </LinearLayout>
 
             </TableRow>
@@ -127,54 +99,26 @@
                 android:layout_height="fill_parent"
                 android:gravity="center">
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
                     android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
                     android:gravity="left">
                     <EditText
+                        android:id="@+id/editText3"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:hint="Student 3"
-                        android:id="@+id/editText5" />
+                        android:hint="Student 2" />
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
                     android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
                     android:gravity="left">
                     <EditText
+                        android:id="@+id/editText4"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:hint="list delimated by &quot;,&quot;"
-                        android:id="@+id/editText6" />
-                </LinearLayout>
-
-            </TableRow>
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center">
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
-                    android:layout_width="fill_parent"
-                    android:gravity="left">
-                    <EditText
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:hint="Student 4"
-                        android:id="@+id/editText7" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
-                    android:layout_width="fill_parent"
-                    android:gravity="left">
-                    <EditText
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:hint="list delimated by &quot;,&quot;"
-                        android:id="@+id/editText8" />
+                        android:hint="list delimated by &quot;,&quot;" />
                 </LinearLayout>
 
             </TableRow>
@@ -183,54 +127,26 @@
                 android:layout_height="fill_parent"
                 android:gravity="center">
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
                     android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
                     android:gravity="left">
                     <EditText
+                        android:id="@+id/editText5"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:hint="Student 5"
-                        android:id="@+id/editText9" />
+                        android:hint="Student 3" />
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
                     android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
                     android:gravity="left">
                     <EditText
+                        android:id="@+id/editText6"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:hint="list delimated by &quot;,&quot;"
-                        android:id="@+id/editText10" />
-                </LinearLayout>
-
-            </TableRow>
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center">
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
-                    android:layout_width="fill_parent"
-                    android:gravity="left">
-                    <EditText
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:hint="Student 6"
-                        android:id="@+id/editText11" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
-                    android:layout_width="fill_parent"
-                    android:gravity="left">
-                    <EditText
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:hint="list delimated by &quot;,&quot;"
-                        android:id="@+id/editText12" />
+                        android:hint="list delimated by &quot;,&quot;" />
                 </LinearLayout>
 
             </TableRow>
@@ -239,54 +155,26 @@
                 android:layout_height="fill_parent"
                 android:gravity="center">
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
                     android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
                     android:gravity="left">
                     <EditText
+                        android:id="@+id/editText7"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:hint="Student 7"
-                        android:id="@+id/editText13" />
+                        android:hint="Student 4" />
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
                     android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
                     android:gravity="left">
                     <EditText
+                        android:id="@+id/editText8"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:hint="list delimated by &quot;,&quot;"
-                        android:id="@+id/editText14" />
-                </LinearLayout>
-
-            </TableRow>
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center">
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
-                    android:layout_width="fill_parent"
-                    android:gravity="left">
-                    <EditText
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:hint="Student 8"
-                        android:id="@+id/editText15" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
-                    android:layout_width="fill_parent"
-                    android:gravity="left">
-                    <EditText
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:hint="list delimated by &quot;,&quot;"
-                        android:id="@+id/editText16" />
+                        android:hint="list delimated by &quot;,&quot;" />
                 </LinearLayout>
 
             </TableRow>
@@ -295,26 +183,138 @@
                 android:layout_height="fill_parent"
                 android:gravity="center">
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
                     android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
                     android:gravity="left">
                     <EditText
+                        android:id="@+id/editText9"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:hint="Student 9"
-                        android:id="@+id/editText17" />
+                        android:hint="Student 5" />
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
                     android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
                     android:gravity="left">
                     <EditText
+                        android:id="@+id/editText10"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:hint="list delimated by &quot;,&quot;"
-                        android:id="@+id/editText18" />
+                        android:hint="list delimated by &quot;,&quot;" />
+                </LinearLayout>
+
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="left">
+                    <EditText
+                        android:id="@+id/editText11"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:hint="Student 6" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="left">
+                    <EditText
+                        android:id="@+id/editText12"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:hint="list delimated by &quot;,&quot;" />
+                </LinearLayout>
+
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="left">
+                    <EditText
+                        android:id="@+id/editText13"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:hint="Student 7" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="left">
+                    <EditText
+                        android:id="@+id/editText14"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:hint="list delimated by &quot;,&quot;" />
+                </LinearLayout>
+
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="left">
+                    <EditText
+                        android:id="@+id/editText15"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:hint="Student 8" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="left">
+                    <EditText
+                        android:id="@+id/editText16"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:hint="list delimated by &quot;,&quot;" />
+                </LinearLayout>
+
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="left">
+                    <EditText
+                        android:id="@+id/editText17"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:hint="Student 9" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="left">
+                    <EditText
+                        android:id="@+id/editText18"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:hint="list delimated by &quot;,&quot;" />
                 </LinearLayout>
             </TableRow>
             <TableRow
@@ -322,26 +322,26 @@
                 android:layout_height="fill_parent"
                 android:gravity="center">
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
                     android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
                     android:gravity="left">
                     <Button
+                        android:id="@+id/Exit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Exit"
-                        android:id="@+id/Exit" />
+                        android:text="Exit" />
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_height="fill_parent"
                     android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
                     android:gravity="left">
                     <Button
+                        android:id="@+id/Next"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Next"
-                        android:id="@+id/Next" />
+                        android:text="Next" />
                 </LinearLayout>
             </TableRow>
         </TableLayout>

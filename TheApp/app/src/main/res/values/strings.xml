@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">G6 - Hospital Matching</string>
+    <string name="title_activity_match_result">MatchResultActivity</string>
 </resources>
