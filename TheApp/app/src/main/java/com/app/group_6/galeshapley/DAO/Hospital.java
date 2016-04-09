@@ -12,6 +12,9 @@ public class Hospital {
     private Medstudent myCurrentStudent;
     private int hospitalID;
 
+    public Hospital() {
+
+    }
     public Hospital(int hospitalID, String hospitalName, ArrayList<Medstudent> preferanceList) {
         this.hospitalName = hospitalName;
         this.hospitalID = hospitalID;
@@ -21,14 +24,8 @@ public class Hospital {
     }
 
 
-    public int getStudentRanking(Medstudent input) {
-        for (int i = 0; i < preferanceList.size(); i++) {
-            Medstudent temp = preferanceList.get(i);
-            if (temp.getStudentID() == (input.getStudentID())) {
-                return i;
-            }
-        }
-        return -1;
+    public int getHospitalID() {
+        return this.hospitalID;
     }
 
     public Medstudent getMyStudent() {
@@ -37,19 +34,6 @@ public class Hospital {
 
     public void setMyStudent(Medstudent getHim) {
         this.myCurrentStudent = getHim;
-    }
-
-    public void freeMyStudent() {
-        Medstudent noStudentYet = new Medstudent();
-        myCurrentStudent = noStudentYet;
-    }
-
-    public boolean compareWithMyStudent(Medstudent newPurpose) {
-        if (getStudentRanking(newPurpose) > getStudentRanking(getMyStudent())) {
-            setMyStudent(newPurpose);
-            return true;
-        } else
-            return false;
     }
 
 
