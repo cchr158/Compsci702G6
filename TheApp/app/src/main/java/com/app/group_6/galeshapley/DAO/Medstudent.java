@@ -1,22 +1,28 @@
 package com.app.group_6.galeshapley.DAO;
 
+import com.app.group_6.galeshapley.Matching;
+
 import java.util.LinkedList;
 
 /**
  * Created by csjmm on 9/04/2016.
  */
-public class Medstudent {
+public class MedStudent {
 
+    public Matching matching;
     private LinkedList<Hospital> preferanceList;
     private String name;
     private int studentID;
     private Hospital myCurrentHospital;
+    private Hospital offer;
 
-    public Medstudent() {
-        //NoStudent
+    public MedStudent() {
+
     }
 
-    public Medstudent(int studentID, String name, LinkedList<Hospital> preferanceList) {
+
+    public MedStudent(int studentID, String name, LinkedList<Hospital> preferanceList) {
+        this.studentID = studentID;
         this.name = name;
         this.preferanceList = preferanceList;
     }
@@ -25,22 +31,48 @@ public class Medstudent {
         return this.name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getStudentID() {
         return this.studentID;
     }
 
+    public void setStudentID(int ID) {
+        this.studentID = ID;
+    }
+
+    public void declineOffer(Hospital newOffer) {
+        newOffer.setMyStudent(newOffer.getPreferanceList().get(0));
+    }
+
+    public void rejectCurrent() {
+        if (this.myCurrentHospital.getHospitalID() != 0) {
+            this.myCurrentHospital.setMyStudent(myCurrentHospital.getPreferanceList().get(0));
+            matching.availableHospital.add(myCurrentHospital);
+        }
+    }
     public void acceptOffer(Hospital newOffer) {
+        rejectCurrent();
         this.myCurrentHospital = newOffer;
     }
+
+    public boolean considerOffer(Hospital newOffer, Matching matching) {
+        this.matching = matching;
+        if (betterThanMyHospital(newOffer)) {
+            acceptOffer(newOffer);
+            return true;
+        } else
+            declineOffer(newOffer);
+        return false;
+    }
+
 
     public Hospital getMyCurrentHospital() {
         return this.myCurrentHospital;
     }
 
-    public void freeMyHospital() {
-        Hospital noHospitalYet = new Hospital();
-        myCurrentHospital = noHospitalYet;
-    }
 
     public int getHospitalRanking(Hospital input) {
         for (int i = 0; i < preferanceList.size(); i++) {
@@ -52,7 +84,7 @@ public class Medstudent {
         return -1;
     }
 
-    public boolean compareWithMyHospital(Hospital newOffer) {
+    public boolean betterThanMyHospital(Hospital newOffer) {
         if (getHospitalRanking(newOffer) > getHospitalRanking(getMyCurrentHospital())) {
             acceptOffer(newOffer);
             return true;
