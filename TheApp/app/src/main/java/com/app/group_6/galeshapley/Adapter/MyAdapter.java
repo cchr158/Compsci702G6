@@ -7,14 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.app.group_6.galeshapley.Data.ListData;
 import com.app.group_6.galeshapley.R;
 
+import java.util.ArrayList;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private String[] mDataset;
+    private ArrayList<ListData> mDataset;
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(String[] myDataset) {
-        mDataset = myDataset;
+    public MyAdapter(ArrayList<ListData> mDataset) {
+        this.mDataset = mDataset;
     }
 
     // Create new views (invoked by the layout manager)
@@ -31,12 +34,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.mTextView.setText(mDataset[position]);
+        holder.mTextView1.setText(mDataset.get(position).getString1());
+        holder.mTextView2.setText(mDataset.get(position).getString2());
     }
 
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return mDataset.size();
     }
 
     // Provide a reference to the views for each data item
@@ -44,13 +48,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     // you provide access to all the views for a data item in a view holder
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         public CardView mCardView;
-        public TextView mTextView;
+        public TextView mTextView1;
+        public TextView mTextView2;
+
 
         public MyViewHolder(View v) {
             super(v);
 
             mCardView = (CardView) v.findViewById(R.id.card_view);
-            mTextView = (TextView) v.findViewById(R.id.tv_text);
+            mTextView1 = (TextView) v.findViewById(R.id.tv_text1);
+            mTextView2 = (TextView) v.findViewById(R.id.tv_text2);
+
         }
     }
 }

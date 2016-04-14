@@ -1,26 +1,26 @@
-package com.app.group_6.galeshapley.DAO;
+package com.app.group_6.galeshapley.Data;
 
 import com.app.group_6.galeshapley.Matching;
 
 import java.util.ArrayList;
 
 /**
- * Created by csjmm on 9/04/2016.
+ * Created by Yiying Sun(Richard) on 9/04/2016.
  */
 public class Hospital {
 
     private String hospitalName;
     private ArrayList<MedStudent> preferanceList;
     private MedStudent myCurrentStudent;
-    private int hospitalID;
+
 
     public Hospital() {
 
     }
 
-    public Hospital(int hospitalID, String hospitalName, ArrayList<MedStudent> preferanceList) {
+    public Hospital(String hospitalName, ArrayList<MedStudent> preferanceList) {
         this.hospitalName = hospitalName;
-        this.hospitalID = hospitalID;
+
         this.preferanceList = preferanceList;
         MedStudent noStudentYet = new MedStudent();
         noStudentYet.setStudentID(0);
@@ -31,8 +31,8 @@ public class Hospital {
         return this.preferanceList;
     }
 
-    public int getHospitalID() {
-        return this.hospitalID;
+    public String getHospitalName() {
+        return hospitalName;
     }
 
     public MedStudent getMyStudent() {

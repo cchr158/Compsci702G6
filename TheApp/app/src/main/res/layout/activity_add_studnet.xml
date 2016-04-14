@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppTheme.NoActionBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.app.group_6.galeshapley.UI.AddStudentActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <ImageView
+        android:id="@+id/name_icon"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignLeft="@+id/preference_icon"
+        android:layout_alignStart="@+id/preference_icon"
+
+
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="32dp"
+        android:alpha="0.54"
+        android:src="@drawable/ic_user_black_24dp" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignTop="@+id/name_icon"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_centerHorizontal="true"
+        android:editable="true"
+        android:ems="10"
+        android:hint="Student Name"
+        android:inputType="textPersonName" />
+
+    <ImageView
+        android:id="@+id/preference_icon"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/name_icon"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="27dp"
+        android:alpha="0.54"
+        android:src="@drawable/f0fe" />
+
+    <EditText
+        android:id="@+id/editHostalPreference"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignTop="@+id/preference_icon"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_centerHorizontal="true"
+        android:editable="true"
+        android:ems="10"
+        android:hint="Preference,Separated by comma"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/saveStudent_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editHostalPreference"
+        android:text="Save" />
+</RelativeLayout>

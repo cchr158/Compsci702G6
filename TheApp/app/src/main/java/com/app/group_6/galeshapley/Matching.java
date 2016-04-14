@@ -1,12 +1,12 @@
 package com.app.group_6.galeshapley;
 
-import com.app.group_6.galeshapley.DAO.Hospital;
-import com.app.group_6.galeshapley.DAO.MedStudent;
+import com.app.group_6.galeshapley.Data.Hospital;
+import com.app.group_6.galeshapley.Data.MedStudent;
 
 import java.util.ArrayList;
 
 /**
- * Created by csjmm on 9/04/2016.
+ * Created by Yiying Sun(Richard) on 9/04/2016.
  */
 public class Matching {
 

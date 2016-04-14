@@ -22,7 +22,7 @@
                 android:src="@drawable/abc_btn_radio_material"></ImageView>
 
             <TextView
-                android:id="@+id/tv_text"
+                android:id="@+id/tv_text1"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -30,10 +30,10 @@
                 android:gravity="center"></TextView>
 
             <TextView
-                android:id="@+id/tv_blah"
+                android:id="@+id/tv_text2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_text"
+                android:layout_below="@+id/tv_text1"
                 android:layout_toEndOf="@+id/iv_image"
                 android:layout_toRightOf="@+id/iv_image"
                 android:text="blah blah blah......"></TextView>

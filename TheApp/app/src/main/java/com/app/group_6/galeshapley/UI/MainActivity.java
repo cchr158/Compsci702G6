@@ -1,6 +1,7 @@
 package com.app.group_6.galeshapley.UI;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -9,22 +10,27 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.group_6.galeshapley.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    private SQLiteDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        DBInitial();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         // Get the ViewPager and set it's PagerAdapter so that it can display items
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         PagerAdapter pagerAdapter =
@@ -47,6 +53,50 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
+    }
+
+    public void DBInitial() {
+        db = openOrCreateDatabase("group6.db", Context.MODE_PRIVATE, null);
+        db.execSQL("DROP TABLE IF EXISTS hospital");
+        db.execSQL("DROP TABLE IF EXISTS student");
+        db.execSQL("DROP TABLE IF EXISTS result");
+        db.execSQL("CREATE TABLE hospital (_id INTEGER PRIMARY KEY AUTOINCREMENT, hospital_name VARCHAR, preferance VARCHAR, dummy INTEGER)");
+        db.execSQL("CREATE TABLE student (_id INTEGER PRIMARY KEY AUTOINCREMENT, student_name VARCHAR, preferance VARCHAR, dummy INTEGER)");
+        db.execSQL("CREATE TABLE result (_id INTEGER PRIMARY KEY AUTOINCREMENT, hospital_name VARCHAR, student_name VARCHAR)");
+ /*       ContentValues cv = new ContentValues();
+        ContentValues cv1 = new ContentValues();
+        ContentValues cv2 = new ContentValues();
+        ContentValues cv3 = new ContentValues();
+        ContentValues cv4 = new ContentValues();
+        ContentValues cv5 = new ContentValues();
+        cv.put("hospital_name", "h1");
+        cv.put("preferance", "s1,s3,s2");
+        cv.put("dummy",0);
+        cv1.put("hospital_name", "h2");
+        cv1.put("preferance", "s1,s3,s2");
+        cv1.put("dummy",0);
+        cv2.put("hospital_name", "h3");
+        cv2.put("preferance", "s3,s1,s2");
+        cv2.put("dummy",0);
+
+        cv3.put("student_name", "s1");
+        cv3.put("preferance", "h2,h3,h1");
+        cv3.put("dummy",0);
+        cv4.put("student_name", "s2");
+        cv4.put("preferance", "h1,h2,h3");
+        cv4.put("dummy",0);
+        cv5.put("student_name", "s3");
+        cv5.put("preferance", "h2,h1,h3");
+        cv5.put("dummy",0);
+        db.insert("hospital", null, cv);
+        db.insert("hospital", null, cv1);
+        db.insert("hospital", null, cv2);
+        db.insert("student", null, cv3);
+        db.insert("student", null, cv4);
+        db.insert("student", null, cv5);*/
+        db.close();
+        Toast.makeText(this.getApplicationContext(), "DBInitial", Toast.LENGTH_LONG);
+        Log.d("MyTag1", "DBInitiald");
     }
 
     /*  @Override

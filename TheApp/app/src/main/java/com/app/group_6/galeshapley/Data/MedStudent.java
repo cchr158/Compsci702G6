@@ -1,11 +1,11 @@
-package com.app.group_6.galeshapley.DAO;
+package com.app.group_6.galeshapley.Data;
 
 import com.app.group_6.galeshapley.Matching;
 
 import java.util.LinkedList;
 
 /**
- * Created by csjmm on 9/04/2016.
+ * Created by Yiying Sun(Richard) on 9/04/2016.
  */
 public class MedStudent {
 
@@ -48,11 +48,12 @@ public class MedStudent {
     }
 
     public void rejectCurrent() {
-        if (this.myCurrentHospital.getHospitalID() != 0) {
-            this.myCurrentHospital.setMyStudent(myCurrentHospital.getPreferanceList().get(0));
-            matching.availableHospital.add(myCurrentHospital);
-        }
+
+        this.myCurrentHospital.setMyStudent(myCurrentHospital.getPreferanceList().get(0));
+        matching.availableHospital.add(myCurrentHospital);
+
     }
+
     public void acceptOffer(Hospital newOffer) {
         rejectCurrent();
         this.myCurrentHospital = newOffer;
@@ -77,7 +78,7 @@ public class MedStudent {
     public int getHospitalRanking(Hospital input) {
         for (int i = 0; i < preferanceList.size(); i++) {
             Hospital temp = preferanceList.get(i);
-            if (temp.getHospitalID() == (input.getHospitalID())) {
+            if (temp.getHospitalName() == (input.getHospitalName())) {
                 return i;
             }
         }
