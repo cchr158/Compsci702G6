@@ -2,7 +2,7 @@ package com.app.group_6.galeshapley.Data;
 
 import com.app.group_6.galeshapley.Matching;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 /**
  * Created by Yiying Sun(Richard) on 9/04/2016.
@@ -10,7 +10,7 @@ import java.util.LinkedList;
 public class MedStudent {
 
     public Matching matching;
-    private LinkedList<Hospital> preferanceList;
+    private ArrayList<Hospital> preferanceList;
     private String name;
     private int studentID;
     private Hospital myCurrentHospital;
@@ -21,7 +21,7 @@ public class MedStudent {
     }
 
 
-    public MedStudent(int studentID, String name, LinkedList<Hospital> preferanceList) {
+    public MedStudent(int studentID, String name, ArrayList<Hospital> preferanceList) {
         this.studentID = studentID;
         this.name = name;
         this.preferanceList = preferanceList;
