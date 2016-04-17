@@ -7,6 +7,7 @@ import java.util.ArrayList;
 /**
  * Created by Yiying Sun(Richard) on 9/04/2016.
  */
+/*
 public class Hospital {
 
     private String hospitalName;
@@ -32,7 +33,7 @@ public class Hospital {
     }
 
     public String getHospitalName() {
-        return hospitalName;
+        return this.hospitalName;
     }
 
     public MedStudent getMyStudent() {
@@ -58,3 +59,4 @@ public class Hospital {
     }
 
 }
+*/

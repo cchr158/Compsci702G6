@@ -7,6 +7,7 @@ import java.util.ArrayList;
 /**
  * Created by Yiying Sun(Richard) on 9/04/2016.
  */
+/*
 public class MedStudent {
 
     public Matching matching;
@@ -93,4 +94,4 @@ public class MedStudent {
             return false;
     }
 
-}
+}*/

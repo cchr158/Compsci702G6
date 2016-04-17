@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         // Get the ViewPager and set it's PagerAdapter so that it can display items
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         PagerAdapter pagerAdapter =
-                new PagerAdapter(getSupportFragmentManager(), MainActivity.this);
+                new PagerAdapter(getSupportFragmentManager(), MainActivity.this); //See inner class for implementation below.
         viewPager.setAdapter(pagerAdapter);
 
         // Give the TabLayout the ViewPager
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
     }
 
+//Creates SQL Database with 3 tables, hospital, student and, result.
     public void DBInitial() {
         db = openOrCreateDatabase("group6.db", Context.MODE_PRIVATE, null);
         db.execSQL("DROP TABLE IF EXISTS hospital");

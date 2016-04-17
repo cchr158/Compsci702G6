@@ -23,6 +23,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Yiying Sun(Richard) on 12/04/2016.
+ * Edited by Callan Christophersen on 17/04/2016.
  */
 public class HospitalFragment extends Fragment {
 
@@ -38,7 +39,7 @@ public class HospitalFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        listData = new ArrayList<>();
+        listData = new ArrayList<ListData>();
 
     }
 
@@ -52,7 +53,16 @@ public class HospitalFragment extends Fragment {
         rv = (RecyclerView) rootView.findViewById(R.id.rv_recycler_view);
         listSetup();
         FloatingActionButton mFabButton = (FloatingActionButton) rootView.findViewById(R.id.fab_add);
-        mFabButton.setOnClickListener(new MyOnClickListener());
+        mFabButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AddHospitalActivity.class);
+                Bundle mBundle = new Bundle();
+                intent.putExtras(mBundle);
+                startActivity(intent);
+                onPause();
+            }
+        });
         //rv.setHasFixedSize(true);
         if (listData.isEmpty()) {
             rv.setVisibility(View.GONE);
@@ -86,18 +96,5 @@ public class HospitalFragment extends Fragment {
         }
         c.close();
 //        Log.d("MyTag1", "listSetup"+  listData.get(1).getString1());
-    }
-
-    public class MyOnClickListener implements View.OnClickListener {
-        boolean isAdd = true;
-
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(getActivity(), AddHospitalActivity.class);
-            Bundle mBundle = new Bundle();
-            intent.putExtras(mBundle);
-            startActivity(intent);
-            onPause();
-        }
     }
 }

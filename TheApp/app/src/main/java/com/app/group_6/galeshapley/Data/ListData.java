@@ -16,7 +16,6 @@ public class ListData {
 
     }
 
-
     public String getString1() {
         return string1;
     }

@@ -30,24 +30,20 @@ public class AddHospitalActivity extends AppCompatActivity {
         hospitalName = (EditText) findViewById(R.id.editName);
         saveBtn = (Button) findViewById(R.id.saveHospital_button);
         preferenceString = (EditText) findViewById(R.id.editStudentPreference);
-        saveBtn.setOnClickListener(new MyOnClickListener());
-    }
+        saveBtn.setOnClickListener(new View.OnClickListener() {
 
-
-    public class MyOnClickListener implements View.OnClickListener {
-        boolean isAdd = true;
-
-        @Override
-        public void onClick(View v) {
-            ContentValues cv = new ContentValues();
-            SQLiteDatabase db = openOrCreateDatabase("group6.db", Context.MODE_PRIVATE, null);
-            cv.put("hospital_name", hospitalName.getText().toString());
-            cv.put("preferance", preferenceString.getText().toString());
-            db.insert("HOSPITAL", null, cv);
-            db.close();
-            finish();
-            Log.d("MyTag1", "finish");
-        }
+            @Override
+            public void onClick(View v) {
+                ContentValues cv = new ContentValues();
+                SQLiteDatabase db = openOrCreateDatabase("group6.db", Context.MODE_PRIVATE, null);
+                cv.put("hospital_name", hospitalName.getText().toString());
+                cv.put("preferance", preferenceString.getText().toString());
+                db.insert("HOSPITAL", null, cv);
+                db.close();
+                finish();
+                Log.d("MyTag1", "finish");
+            }
+        });
     }
 
 }

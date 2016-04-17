@@ -69,8 +69,8 @@
         android:layout_centerHorizontal="true"
         android:editable="true"
         android:ems="10"
-        android:hint="Preference,Separated by comma"
-        android:inputType="text" />
+        android:hint="Preference list, Separated by comma"
+        android:inputType="textMultiLine"/>
 
     <Button
         android:id="@+id/saveStudent_button"

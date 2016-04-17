@@ -73,9 +73,9 @@
         android:layout_centerHorizontal="true"
         android:editable="true"
         android:ems="10"
-
-        android:hint="Preference,Separated by comma"
-        android:inputType="text" />
+        android:hint="Preference list, Separated by comma"
+        android:inputType="textMultiLine"
+        android:layout_alignParentStart="false" />
 
     <Button
         android:id="@+id/saveHospital_button"
@@ -85,4 +85,6 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/editStudentPreference"
         android:text="Save" />
+
+
 </RelativeLayout>

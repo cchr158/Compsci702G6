@@ -22,6 +22,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Yiying Sun(Richard) on 12/04/2016.
+ * Edited by Callan Christophersen on 17/04/2016.
  */
 public class StudentFragment extends Fragment {
 
@@ -46,7 +47,16 @@ public class StudentFragment extends Fragment {
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv_recycler_view);
 
         FloatingActionButton mFabButton = (FloatingActionButton) rootView.findViewById(R.id.fab_add);
-        mFabButton.setOnClickListener(new MyOnClickListener());
+        mFabButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AddStudentActivity.class);
+                Bundle mBundle = new Bundle();
+                intent.putExtras(mBundle);
+                startActivity(intent);
+                onPause();
+            }
+        });
         //rv.setHasFixedSize(true);
         if (listData.isEmpty()) {
             rv.setVisibility(View.GONE);
@@ -76,19 +86,5 @@ public class StudentFragment extends Fragment {
             listData.add(temp);
         }
         c.close();
-
-    }
-
-    public class MyOnClickListener implements View.OnClickListener {
-        boolean isAdd = true;
-
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(getActivity(), AddStudentActivity.class);
-            Bundle mBundle = new Bundle();
-            intent.putExtras(mBundle);
-            startActivity(intent);
-            onPause();
-        }
     }
 }
