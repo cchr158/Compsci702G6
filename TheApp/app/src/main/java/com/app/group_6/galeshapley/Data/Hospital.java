@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Yiying Sun(Richard) on 9/04/2016.
+ * Edited by Callan Christophersen on 18/04/2016.
  */
 /*
 public class Hospital {

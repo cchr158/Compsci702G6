@@ -71,6 +71,12 @@ public class Matching {
 
         }*/
     }
+    Collection getHospitalList(){
+        return this.hospitalList;
+    }
+    Collection getStudentList(){
+        return this.studentList;
+    }
 
 }
 interface blue{
