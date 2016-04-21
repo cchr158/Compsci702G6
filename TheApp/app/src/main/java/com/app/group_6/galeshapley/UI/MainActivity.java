@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
     }
 
-//Creates SQL Database with 3 tables, hospital, student and, result.
+    //Creates SQL Database with 3 tables, hospital, student and, result.
     public void DBInitial() {
         db = openOrCreateDatabase("group6.db", Context.MODE_PRIVATE, null);
         db.execSQL("DROP TABLE IF EXISTS hospital");

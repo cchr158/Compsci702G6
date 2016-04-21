@@ -47,7 +47,7 @@ public class StudentFragment extends Fragment {
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv_recycler_view);
 
         FloatingActionButton mFabButton = (FloatingActionButton) rootView.findViewById(R.id.fab_add);
-        mFabButton.setOnClickListener(new View.OnClickListener(){
+        mFabButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AddStudentActivity.class);
@@ -62,7 +62,6 @@ public class StudentFragment extends Fragment {
             rv.setVisibility(View.GONE);
             emptyView.setVisibility(View.VISIBLE);
         } else {
-
             rv.setVisibility(View.VISIBLE);
             emptyView.setVisibility(View.GONE);
             MyAdapter adapter = new MyAdapter(listData);
@@ -78,7 +77,7 @@ public class StudentFragment extends Fragment {
 
     public void listSetup() {
         SQLiteDatabase db = getActivity().openOrCreateDatabase("group6.db", Context.MODE_PRIVATE, null);
-        Cursor c = db.rawQuery("SELECT * FROM student WHERE dummy <> 1", null);
+        Cursor c = db.rawQuery("SELECT * FROM student", null);
         while (c.moveToNext()) {
             String student_name = c.getString(c.getColumnIndex("student_name"));
             String preferance = c.getString(c.getColumnIndex("preferance"));
