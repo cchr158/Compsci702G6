@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Matching.java&apos; to &apos;MachingLib/src/GaleShapleV1_1&apos;&#x0D;&#x0A;- Original project: &apos;MachingLib&apos;&#x0D;&#x0A;- Destination element: &apos;MachingLib/src/GaleShapleV1_1&apos;&#x0D;&#x0A;- Original element: &apos;GaleShapleyV1_0.Matching.java&apos;" description="Copy compilation unit" destination="/src&lt;GaleShapleV1_1" element1="/src&lt;GaleShapleyV1_0{Matching.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1461061057336" units="1" version="1.0"/>
+</session>
