@@ -201,28 +201,29 @@ public class Matching {
 		}
 		return l;
 	}
-	public static void main(String[] args){
-		LinkedList<String> bs = new LinkedList<String>();
-		bs.add("Frank");
-		bs.add("Kate,Mary,Rhea,Jill");
-		bs.add("Dennis");
-		bs.add("Mary,Jill,Rhea,Kate");
-		bs.add("Mac");
-		bs.add("Kate,Rhea,Jill,Mary");
-		bs.add("Charlie");
-		bs.add("Rhea,Mary,Kate,Jill");
-		LinkedList<String> ps = new LinkedList<String>();
-		ps.add("Rhea");
-		ps.add("Frank,Mac,Dennis,Charlie");
-		ps.add("Mary");
-		ps.add("Mac,Charlie,Dennis,Frank");
-		ps.add("Kate");
-		ps.add("Dennis,Mac,Charlie,Frank");
-		ps.add("Jill");
-		ps.add("Charlie,Dennis,Frank,Mac");
-		String [] s = Matching.GS(bs, ps);
-		for(int i=0; i<s.length; i+=2){
-			System.out.println(s[i]+" "+s[i+1]);
-		}
-	}	
+	//This is for testing only. Do not include in Lib.
+//	public static void main(String[] args){
+//		LinkedList<String> bs = new LinkedList<String>();
+//		bs.add("Frank");
+//		bs.add("Kate,Mary,Rhea,Jill");
+//		bs.add("Dennis");
+//		bs.add("Mary,Jill,Rhea,Kate");
+//		bs.add("Mac");
+//		bs.add("Kate,Rhea,Jill,Mary");
+//		bs.add("Charlie");
+//		bs.add("Rhea,Mary,Kate,Jill");
+//		LinkedList<String> ps = new LinkedList<String>();
+//		ps.add("Rhea");
+//		ps.add("Frank,Mac,Dennis,Charlie");
+//		ps.add("Mary");
+//		ps.add("Mac,Charlie,Dennis,Frank");
+//		ps.add("Kate");
+//		ps.add("Dennis,Mac,Charlie,Frank");
+//		ps.add("Jill");
+//		ps.add("Charlie,Dennis,Frank,Mac");
+//		String [] s = Matching.GS(bs, ps);
+//		for(int i=0; i<s.length; i+=2){
+//			System.out.println(s[i]+" "+s[i+1]);
+//		}
+//	}	
 }
