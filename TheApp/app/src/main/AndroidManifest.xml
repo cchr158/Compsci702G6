@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.app.group_6.galeshapley"
+    platformBuildVersionCode="23"
     android:versionCode="1"
-    android:versionName="1.0"
-    platformBuildVersionCode="23">
-    <uses-sdk android:minSdkVersion="15"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="15"
         android:targetSdkVersion="23" />
+
+    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -32,7 +38,11 @@
             android:parentActivityName=".UI.MainActivity" />
         <activity
             android:name=".UI.AddStudentActivity"
-            android:parentActivityName=".UI.MainActivity"></activity>
+            android:parentActivityName=".UI.MainActivity" />
+
+        <service
+            android:name=".BridgeService"
+            android:exported="false"></service>
     </application>
 
 </manifest>

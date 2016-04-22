@@ -53,7 +53,7 @@ public class HospitalFragment extends Fragment {
         rv = (RecyclerView) rootView.findViewById(R.id.rv_recycler_view);
         listSetup();
         FloatingActionButton mFabButton = (FloatingActionButton) rootView.findViewById(R.id.fab_add);
-        mFabButton.setOnClickListener(new View.OnClickListener(){
+        mFabButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AddHospitalActivity.class);
