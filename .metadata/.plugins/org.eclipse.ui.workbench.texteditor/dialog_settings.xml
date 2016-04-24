@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="a19aca166dd1f14dee852418a4d78739f57b1f3e91996ac5a5aa460b7263149e2" key="selection"/>
+		<item value="true" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="true" key="wholeword"/>
+		<list key="findhistory">
+			<item value="s"/>
+			<item value="l"/>
+			<item value="lArray"/>
+			<item value="clearWhiteSpace"/>
+			<item value="blueIDs"/>
+			<item value="myBlue"/>
+			<item value="n"/>
+			<item value="temp"/>
+		</list>
+		<list key="replacehistory">
+			<item value="a19aca166dd1f14dee852418a4d78739f57b1f3e91996ac5a5aa460b7263149e2"/>
+			<item value="acac86c0e609ca906f632b0e2dacccb2b77d22b0621f20ebece1a4835b93f6f0"/>
+			<item value="d60cac22e728cb4c0b31daa867659fd38d4913631a85dd18c5918ff3c3e34ef2"/>
+			<item value="a230b32e2a0afd90bd496829a119c9a13a013c046f69c3e91593e09b0f5152947"/>
+			<item value="ec2cae2f26639ef56d23d478a589aad83622e01a943f0839a5f7f8bcb0458508"/>
+			<item value="a9bd38c6328f08abef092431841c64d0507aac58bbde79f3cd21ab835fd1b61b1"/>
+			<item value="a6864eb339b0e1f6e00d75293a8840abf069a2c0fe82e6e53af6ac099793c1d5"/>
+			<item value="ad546bc4f6474346bd1923ac327fc4342a7164c36a9fa2cd0ea92a632b4056753"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="257" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="380" key="DIALOG_HEIGHT"/>
+		<item value="779" key="DIALOG_X_ORIGIN"/>
+		<item value="367" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

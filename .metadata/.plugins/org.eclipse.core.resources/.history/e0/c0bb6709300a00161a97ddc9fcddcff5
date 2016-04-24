@@ -1,0 +1,317 @@
+package GaleShapleV1_3;
+
+/*
+ * Author: Callan Christophersen
+ * UPI: cchr158
+ */
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.applet.*;
+import java.awt.*;
+import java.beans.*;
+import java.lang.*;
+import java.math.*;
+import java.net.*;
+import java.awt.im.spi.*;
+import java.awt.datatransfer.*;
+import java.nio.file.*;
+import java.util.*;
+import com.oracle.*;
+import com.oracle.jrockit.*;
+import com.oracle.util.*;
+import com.sun.*;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
+
+public class f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b194dc{
+	class a8affb8ec27e28d26cc744878c4e858ab9dee499e246855be346fe28ad8e912f6 {
+	    private int ac0d29eb07e99136f80b6f26a0546443f1eca78ce4fea3b0f75846d80bebb0ded;
+	    private final List acd01893224aa407fd921dbb6b79a3d98abad5521176495b5f3187abebf1e3530 = new ArrayList();
+
+	    final private double a7cd98d720baf4f98591a7234305bd9e0e4603633ed8f88ea1a0fb31319c97502 = -2.5;
+	    final private double a37d2eebda66f1f918e60bd33e2e29af7cde37077d68e7ff46023cedbd3a9d4e7 = 0.5;
+	    final private double ade23a758f295528262c697e9917843fec7bfee0324f291d68dd7562c94544836 = -1.25;
+	    final private double a31bf9d8cec5b66c3a2230e4f7690f1dfc19778746ab1d4446b63de1ec7b45bd9 = 1.25;
+
+	    private double a7040b322a05f0a02c2e94dc32b1a4570813f5b4b42b5344c262359230100f7f0, fc75624eaa36a3037eb7470d210ddbfe7b27d3a5fc078e41d6f95a0dd6f83aea, a0d68d92c33185ee266623a6e1f4f5139ebabfb7c5668a45c66c798683a7598d0, f669b9c9334aec1b371d78cabcd7818f1b30abd774d2ef591fd9acb5f86c953e;
+
+	    private int [] a3ca087052d31a33388cc8ed671e6151442700bee0f324702ad719f3b88071327;
+	    private int dec0f004eaa07c2a283ea326df8f00c2c3c60b002c9bb8d452b1dcff5ba795cb, a12dea73a9228b199fd313890b94b24b2fdd0f910da33829901ce93cdfe5f0e93;
+
+	    public a8affb8ec27e28d26cc744878c4e858ab9dee499e246855be346fe28ad8e912f6(int ac0d29eb07e99136f80b6f26a0546443f1eca78ce4fea3b0f75846d80bebb0ded, int dec0f004eaa07c2a283ea326df8f00c2c3c60b002c9bb8d452b1dcff5ba795cb, int a12dea73a9228b199fd313890b94b24b2fdd0f910da33829901ce93cdfe5f0e93) {
+	        this.ac0d29eb07e99136f80b6f26a0546443f1eca78ce4fea3b0f75846d80bebb0ded = ac0d29eb07e99136f80b6f26a0546443f1eca78ce4fea3b0f75846d80bebb0ded;
+
+	        this.dec0f004eaa07c2a283ea326df8f00c2c3c60b002c9bb8d452b1dcff5ba795cb = dec0f004eaa07c2a283ea326df8f00c2c3c60b002c9bb8d452b1dcff5ba795cb;
+	        this.a12dea73a9228b199fd313890b94b24b2fdd0f910da33829901ce93cdfe5f0e93 = a12dea73a9228b199fd313890b94b24b2fdd0f910da33829901ce93cdfe5f0e93;
+	        this.a3ca087052d31a33388cc8ed671e6151442700bee0f324702ad719f3b88071327 = new int[dec0f004eaa07c2a283ea326df8f00c2c3c60b002c9bb8d452b1dcff5ba795cb*a12dea73a9228b199fd313890b94b24b2fdd0f910da33829901ce93cdfe5f0e93];
+
+	        this.a7040b322a05f0a02c2e94dc32b1a4570813f5b4b42b5344c262359230100f7f0 = a7cd98d720baf4f98591a7234305bd9e0e4603633ed8f88ea1a0fb31319c97502;
+	        this.fc75624eaa36a3037eb7470d210ddbfe7b27d3a5fc078e41d6f95a0dd6f83aea = a37d2eebda66f1f918e60bd33e2e29af7cde37077d68e7ff46023cedbd3a9d4e7;
+	        this.a0d68d92c33185ee266623a6e1f4f5139ebabfb7c5668a45c66c798683a7598d0 = ade23a758f295528262c697e9917843fec7bfee0324f291d68dd7562c94544836;
+	        this.f669b9c9334aec1b371d78cabcd7818f1b30abd774d2ef591fd9acb5f86c953e = a31bf9d8cec5b66c3a2230e4f7690f1dfc19778746ab1d4446b63de1ec7b45bd9;
+	    }	    
+	}	
+	
+	private String[] GaleShapleyAlg() {
+		Collection<Blue> bls = new LinkedList<Blue>(blues);
+		Blue m;
+		Pink w;
+		while (!bls.isEmpty()) {
+			m = ((LinkedList<Blue>) bls).poll();
+			w = (Pink) ((LinkedList<Pink>) m.getPreferanceList()).poll();
+			if (w.isFree()) {
+				w.setMyBlue(m);
+			} else {
+				if (w.compareToMyBlue(m)) {
+					bls.add(w.getMyMan());
+					w.setMyBlue(m);
+				} else {
+					bls.add(m);
+				}
+			}
+		}
+		return matching.printMatching();
+	}
+	
+	public static String[] GS(LinkedList<String> b, LinkedList<String> p) {
+		b = matching.clearWhiteSpace(b);
+		p = matching.clearWhiteSpace(p);
+		return (new f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b194dc(b, p)).GaleShapleyAlg();
+	}
+	
+	public f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b194dc(LinkedList<String> b, LinkedList<String> p) {
+		matching.setupPinks(p,this);
+		matching.setupBlues(b);
+		matching.setPinksPrefs(p);
+	}
+	
+	public static void main(String[] args){
+		LinkedList<String> bs = new LinkedList<String>();
+		bs.add("Frank");
+		bs.add("Kate,Mary,Rhea,Jill");
+		bs.add("Dennis");
+		bs.add("Mary,Jill,Rhea,Kate");
+		bs.add("Mac");
+		bs.add("Kate,Rhea,Jill,Mary");
+		bs.add("Charlie");
+		bs.add("Rhea,Mary,Kate,Jill");
+		LinkedList<String> ps = new LinkedList<String>();
+		ps.add("Rhea");
+		ps.add("Frank,Mac,Dennis,Charlie");
+		ps.add("Mary");
+		ps.add("Mac,Charlie,Dennis,Frank");
+		ps.add("Kate");
+		ps.add("Dennis,Mac,Charlie,Frank");
+		ps.add("Jill");
+		ps.add("Charlie,Dennis,Frank,Mac");
+		String [] s = f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b194dc.GS(bs, ps);
+		for(int i=0; i<s.length; i+=2){
+			System.out.println(s[i]+" "+s[i+1]);
+		}
+	}
+	
+	interface Pink{
+		String getID();
+
+		Blue getMyMan();
+
+		boolean compareToMyBlue(Blue m);
+
+		void setMyBlue(Blue m);
+
+		void setPreferances(String prefList);
+
+		boolean isFree();
+	}
+	private final static LinkedList<Blue> blues = new LinkedList<Blue>();
+	interface Blue{
+		Pink getMyWomen();
+
+		void setMyPink(Pink w);
+
+		Collection<Pink> getPreferanceList();
+
+		String getID();
+
+		Blue setPref(String prefList);
+	}
+	private static Pink[] pinks;
+	interface matching{
+		static final String key = "SelectedStudents".toUpperCase();
+
+		static Pink[] getPinks() {
+			return pinks;
+		}
+
+		static Collection<Blue> getBlues() {
+			return blues;
+		}
+
+		static String[] printMatching() {
+			LinkedList<String> out = new LinkedList<String>();
+			for (Blue m : blues) {
+				out.add(m.getID());
+				out.add(m.getMyWomen().getID());
+			}
+			return out.toArray(new String[out.size()]);
+		}
+
+		static void setPinksPrefs(LinkedList<String> p) {
+			for (int i = 0, j = 1; i < pinks.length && j < p.size();) {
+				pinks[i].setPreferances(p.get(j));
+				i++;
+				j += 2;
+			}
+		}
+		static String encrypt(String text) {
+	        String res = "";
+	        text = text.toUpperCase();
+	        for (int i = 0, j = 0; i < text.length(); i++) {
+	            char c = text.charAt(i);
+	            if (c < 'A' || c > 'Z') continue;
+	            res += (char)((c + key.charAt(j) - 2 * 'A') % 26 + 'A');
+	            j = ++j % key.length();
+	        }
+	        return res;
+	    }
+
+		static void setupBlues(LinkedList<String> b) {
+			for (int i = 0; i < b.size(); i += 2) {
+				final int ii=i;
+				blues.add(new Blue(){
+					private Collection<Pink> preferanceList = new LinkedList<Pink>();
+					private Pink myPink = null;
+					private String id = matching.encrypt(b.get(ii));
+
+					public Pink getMyWomen() {
+						return this.myPink;
+					}
+					public String getID(){
+						String res = "";
+				        this.id = this.id.toUpperCase();
+				        for (int i = 0, j = 0; i < this.id.length(); i++) {
+				            char c = this.id.charAt(i);
+				            if (c < 'A' || c > 'Z') continue;
+				            res += (char)((c - key.charAt(j) + 26) % 26 + 'A');
+				            j = ++j % key.length();
+				        }
+				        return res;
+					}
+					public Object ob1(Object obj){
+						for(int i=0; i < ((String)obj).length(); i++){
+							obj += "ASLDJF;akldjf";
+						}
+						return obj;
+					}
+					public Blue setPref(String prefList) {
+						String[] pinkIDs = prefList.split(",");
+						for (int i = 0; i < pinkIDs.length; i++) {
+							int j = 0;
+							while (!pinks[j].getID().equalsIgnoreCase(pinkIDs[i]))
+								j++;
+							this.preferanceList.add(pinks[j]);
+						}
+						return this;
+					}
+					public Collection<Pink> getPreferanceList() {
+						return this.preferanceList;
+					}
+					public void setMyPink(Pink w) {
+						this.myPink = w;
+					}
+				}.setPref(b.get(ii+1)));
+			}
+		}
+
+		static void setupPinks(LinkedList<String> p, f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b194dc gs) {
+			pinks = new Pink[p.size() / 2];
+			int name = 0;
+			for (int i = 0; i < p.size() / 2; i++) {
+				f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b194dc temp = gs;
+				final int n = name;
+				pinks[i] = new Pink(){
+					private Blue myBlue = null ;
+					private Blue[] preferanceList = new Blue[p.size() / 2];
+					private f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b194dc gs = temp;
+					private String id = matching.encrypt(p.get(n));
+
+					public String getID() {
+						String res = "";
+				        this.id = this.id.toUpperCase();
+				        for (int i = 0, j = 0; i < this.id.length(); i++) {
+				            char c = this.id.charAt(i);
+				            if (c < 'A' || c > 'Z') continue;
+				            res += (char)((c - key.charAt(j) + 26) % 26 + 'A');
+				            j = ++j % key.length();
+				        }
+				        return res;
+					}
+
+					public Blue getMyMan() {
+						return this.myBlue;
+					}
+
+					public boolean compareToMyBlue(Blue m) {
+						for (int i = 0; i < this.preferanceList.length; i++) {
+							if (this.preferanceList[i].equals(this.myBlue)) {
+								return false;
+							}
+							if (this.preferanceList[i].equals(m)) {
+								return true;
+							}
+						}
+						return false;
+					}
+
+					public void setMyBlue(Blue m) {
+						this.myBlue = m;
+						m.setMyPink(this);
+					}
+
+					public void setPreferances(String prefList) {
+						String[] blueIDs = prefList.split(",");
+						for (int i = 0; i < blueIDs.length; i++) {
+							int j = 0;
+							while (!(blues.get(j).getID().equalsIgnoreCase(blueIDs[i])))
+								j++;
+							this.preferanceList[i] = blues.get(j);
+						}
+					}
+
+					public boolean isFree() {
+						return this.myBlue == null;
+					}
+					
+				};
+
+				name += 2;
+			}
+		}
+
+		static LinkedList<String> clearWhiteSpace(LinkedList<String> l) {
+			String[] lArray = l.toArray(new String[l.size()]);
+			l = new LinkedList<String>();
+			for (int i = 0; i < lArray.length; i++) {
+				char[] c = lArray[i].toCharArray();
+				for (int j = 0; j < c.length; j++) {
+					if (c[j] == ' ')
+						c[j] = '\0';
+				}
+				String s="";
+				for(int j=0; j<c.length; j++){
+					s +=c[j];
+				}
+				l.add(s);
+			}
+			return l;
+		}
+	}
+}
