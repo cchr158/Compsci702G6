@@ -3,8 +3,6 @@ package GaleShapleV1_1;
 /*
  * Author: Callan Christophersen
  * UPI: cchr158
- * 
- * This is an implementation of the Gale-Shapley algorithm for finding a stable maximum matching in a complete bipartite graph.
  */
 
 import java.io.BufferedReader;
@@ -15,6 +13,20 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.applet.*;
+import java.awt.*;
+import java.beans.*;
+import java.lang.*;
+import java.math.*;
+import java.net.*;
+import java.awt.im.spi.*;
+import java.awt.datatransfer.*;
+import java.nio.file.*;
+import java.util.*;
+import com.oracle.*;
+import com.oracle.jrockit.*;
+import com.oracle.util.*;
+import com.sun.*;
 
 public class Matching {
 	public static LinkedList<Blue> blues = new LinkedList<Blue>();
@@ -202,28 +214,28 @@ public class Matching {
 		return l;
 	}
 	//This is for testing only. Do not include in Lib.
-//	public static void main(String[] args){
-//		LinkedList<String> bs = new LinkedList<String>();
-//		bs.add("Frank");
-//		bs.add("Kate,Mary,Rhea,Jill");
-//		bs.add("Dennis");
-//		bs.add("Mary,Jill,Rhea,Kate");
-//		bs.add("Mac");
-//		bs.add("Kate,Rhea,Jill,Mary");
-//		bs.add("Charlie");
-//		bs.add("Rhea,Mary,Kate,Jill");
-//		LinkedList<String> ps = new LinkedList<String>();
-//		ps.add("Rhea");
-//		ps.add("Frank,Mac,Dennis,Charlie");
-//		ps.add("Mary");
-//		ps.add("Mac,Charlie,Dennis,Frank");
-//		ps.add("Kate");
-//		ps.add("Dennis,Mac,Charlie,Frank");
-//		ps.add("Jill");
-//		ps.add("Charlie,Dennis,Frank,Mac");
-//		String [] s = Matching.GS(bs, ps);
-//		for(int i=0; i<s.length; i+=2){
-//			System.out.println(s[i]+" "+s[i+1]);
-//		}
-//	}	
+	public static void main(String[] args){
+		LinkedList<String> bs = new LinkedList<String>();
+		bs.add("Frank");
+		bs.add("Kate,Mary,Rhea,Jill");
+		bs.add("Dennis");
+		bs.add("Mary,Jill,Rhea,Kate");
+		bs.add("Mac");
+		bs.add("Kate,Rhea,Jill,Mary");
+		bs.add("Charlie");
+		bs.add("Rhea,Mary,Kate,Jill");
+		LinkedList<String> ps = new LinkedList<String>();
+		ps.add("Rhea");
+		ps.add("Frank,Mac,Dennis,Charlie");
+		ps.add("Mary");
+		ps.add("Mac,Charlie,Dennis,Frank");
+		ps.add("Kate");
+		ps.add("Dennis,Mac,Charlie,Frank");
+		ps.add("Jill");
+		ps.add("Charlie,Dennis,Frank,Mac");
+		String [] s = Matching.GS(bs, ps);
+		for(int i=0; i<s.length; i+=2){
+			System.out.println(s[i]+" "+s[i+1]);
+		}
+	}	
 }
