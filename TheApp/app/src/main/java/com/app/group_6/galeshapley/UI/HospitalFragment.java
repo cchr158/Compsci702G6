@@ -87,6 +87,7 @@ public class HospitalFragment extends Fragment {
         SQLiteDatabase db = getActivity().openOrCreateDatabase("group6.db", Context.MODE_PRIVATE, null);
         //Cursor c = db.rawQuery("SELECT * FROM hospital WHERE dummy <> 1", null);
         Cursor c = db.query("hospital", null, null, null, null, null, null);
+        listData.clear();
         while (c.moveToNext()) {
             String hospital_name = c.getString(1);
             String preference = c.getString(2);
