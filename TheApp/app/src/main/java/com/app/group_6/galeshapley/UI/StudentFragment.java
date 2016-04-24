@@ -80,7 +80,7 @@ public class StudentFragment extends Fragment {
         Cursor c = db.rawQuery("SELECT * FROM student", null);
         while (c.moveToNext()) {
             String student_name = c.getString(c.getColumnIndex("student_name"));
-            String preferance = c.getString(c.getColumnIndex("preferance"));
+            String preferance = c.getString(c.getColumnIndex("preference"));
             ListData temp = new ListData(student_name, preferance);
             listData.add(temp);
         }

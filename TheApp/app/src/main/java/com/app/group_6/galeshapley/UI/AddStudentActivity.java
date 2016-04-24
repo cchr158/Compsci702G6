@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,9 +45,10 @@ public class AddStudentActivity extends AppCompatActivity {
             ContentValues cv = new ContentValues();
             SQLiteDatabase db = openOrCreateDatabase("group6.db", Context.MODE_PRIVATE, null);
             cv.put("student_name", studentName.getText().toString());
-            cv.put("preferance", preferenceString.getText().toString());
-            db.insert("MED_STUDENT", null, cv);
+            cv.put("preference", preferenceString.getText().toString());
+            db.insert("student", null, cv);
             db.close();
+            Log.d("MyTag", "finish adding Hospital");
             finish();
         }
     }

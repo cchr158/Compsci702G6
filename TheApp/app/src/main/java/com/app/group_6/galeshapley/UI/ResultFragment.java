@@ -23,7 +23,6 @@ import com.app.group_6.galeshapley.Data.ListData;
 import com.app.group_6.galeshapley.R;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 final
 /**
@@ -65,18 +64,28 @@ public class ResultFragment extends Fragment {
                 while (c1.moveToNext()) {
                     String student_name = c1.getString(1);
                     String preference = c1.getString(2);
-                    hospitalList.add(student_name);
-                    hospitalList.add(preference);
+                    studentList.add(student_name);
+                    studentList.add(preference);
                 }
                 c1.close();
 
                 db.close();
-                Intent msgIntent = new Intent(getActivity(), BridgeService.class);
-                msgIntent.putStringArrayListExtra("HOSPITAL_LIST", hospitalList);
-                msgIntent.putExtra("STUDENT_LIST", studentList);
-                getActivity().startService(msgIntent);
-                Log.d("MyTag1", "onClick()");
-                Toast.makeText(getActivity().getApplicationContext(), "Starting Service", Toast.LENGTH_LONG);
+                if (hospitalList.size() == 0 || studentList.size() == 0) {
+                    Toast.makeText(getActivity().getApplicationContext(),
+                            "Input hospital and student to generate perfect match:"
+                            , Toast.LENGTH_LONG).show();
+                } else if (hospitalList.size() == studentList.size()) {
+                    Intent msgIntent = new Intent(getActivity(), BridgeService.class);
+                    msgIntent.putStringArrayListExtra("HOSPITAL_LIST", hospitalList);
+                    msgIntent.putStringArrayListExtra("STUDENT_LIST", studentList);
+                    getActivity().startService(msgIntent);
+                    Log.d("MyTag1", "onClick()" + hospitalList.toString() + studentList.toString());
+                    Toast.makeText(getActivity().getApplicationContext(), "Starting Service", Toast.LENGTH_LONG).show();
+
+                } else
+                    Toast.makeText(getActivity().getApplicationContext(),
+                            "The number of hospital and student must to equal to generate perfect match current hospital:"
+                                    + hospitalList.size() + "current studdent:" + studentList.size(), Toast.LENGTH_LONG).show();
             }
         });
         //rv.setHasFixedSize(true);
@@ -102,10 +111,11 @@ public class ResultFragment extends Fragment {
         @Override
         public void onReceive(Context context, Intent intent) {
             ArrayList<String> returnString = intent.getStringArrayListExtra("Result");
-            for (int i = 0; i < returnString.size(); i = i+2) {
-                ListData resultItem = new ListData(returnString.get(i), returnString.get(i+1));
+            for (int i = 0; i < returnString.size(); i = i + 2) {
+                ListData resultItem = new ListData(returnString.get(i), returnString.get(i + 1));
                 listData.add(resultItem);
             }
+            Log.d("MyTag2", "listData" + listData.toString());
             adapter.notifyDataSetChanged();
         }
     }

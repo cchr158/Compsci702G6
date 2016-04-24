@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
         db.execSQL("DROP TABLE IF EXISTS hospital");
         db.execSQL("DROP TABLE IF EXISTS student");
         db.execSQL("DROP TABLE IF EXISTS result");
-        db.execSQL("CREATE TABLE hospital (_id INTEGER PRIMARY KEY AUTOINCREMENT, hospital_name VARCHAR, preferance VARCHAR, dummy INTEGER)");
-        db.execSQL("CREATE TABLE student (_id INTEGER PRIMARY KEY AUTOINCREMENT, student_name VARCHAR, preferance VARCHAR, dummy INTEGER)");
+        db.execSQL("CREATE TABLE hospital (_id INTEGER PRIMARY KEY AUTOINCREMENT, hospital_name VARCHAR, preference VARCHAR, dummy INTEGER)");
+        db.execSQL("CREATE TABLE student (_id INTEGER PRIMARY KEY AUTOINCREMENT, student_name VARCHAR, preference VARCHAR, dummy INTEGER)");
         db.execSQL("CREATE TABLE result (_id INTEGER PRIMARY KEY AUTOINCREMENT, hospital_name VARCHAR, student_name VARCHAR)");
  /*       ContentValues cv = new ContentValues();
         ContentValues cv1 = new ContentValues();

@@ -37,11 +37,11 @@ public class AddHospitalActivity extends AppCompatActivity {
                 ContentValues cv = new ContentValues();
                 SQLiteDatabase db = openOrCreateDatabase("group6.db", Context.MODE_PRIVATE, null);
                 cv.put("hospital_name", hospitalName.getText().toString());
-                cv.put("preferance", preferenceString.getText().toString());
-                db.insert("HOSPITAL", null, cv);
+                cv.put("preference", preferenceString.getText().toString());
+                db.insert("hospital", null, cv);
                 db.close();
                 finish();
-                Log.d("MyTag1", "finish");
+                Log.d("MyTag", "finish adding Hospital");
             }
         });
     }

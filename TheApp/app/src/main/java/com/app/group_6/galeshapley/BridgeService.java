@@ -2,6 +2,7 @@ package com.app.group_6.galeshapley;
 
 import android.app.IntentService;
 import android.content.Intent;
+import android.util.Log;
 
 import com.app.group_6.galeshapley.Data.ListData;
 
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 import GaleShapleV1_1.Matching;
+
 
 /**
  * An {@link IntentService} subclass for handling asynchronous task requests in
@@ -19,12 +21,12 @@ import GaleShapleV1_1.Matching;
  */
 public class BridgeService extends IntentService {
 
+    private ArrayList<ListData> resultList;
+
     public BridgeService() {
         super("BridgeService");
         resultList = new ArrayList<>();
     }
-
-    private ArrayList<ListData> resultList;
 
     /**
      * Starts this service to perform action Foo with the given parameters. If
@@ -41,10 +43,11 @@ public class BridgeService extends IntentService {
             param1.addAll(intent.getStringArrayListExtra("HOSPITAL_LIST"));
             LinkedList<String> param2 = new LinkedList<>();
             param2.addAll(intent.getStringArrayListExtra("STUDENT_LIST"));
-            Matching matching = new Matching(param1, param2);
+            Log.d("MyTag2", "onHandleIntent()" + param1.toString() + param2.toString());
             ArrayList<String> returnString = new ArrayList<>();
-            returnString.addAll(matching.GS(param1, param2));
+            returnString.addAll(Matching.GS(param1, param2));
             Intent broadcastIntent = new Intent();
+            Log.d("MyTag2", "returnString" + returnString.toString());
             broadcastIntent.setAction("Result");
             broadcastIntent.putStringArrayListExtra("result", returnString);
         }
