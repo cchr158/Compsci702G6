@@ -1,4 +1,4 @@
-package GaleShapleV1_3;
+package testing;
 
 /*
  * Author: Callan Christophersen
@@ -69,6 +69,7 @@ public class f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b194dc{
 		e0705e68b0468289858b543f8a57f375a3b4f46391a72f94a28d82d6a3dacaa7.c7df1f3a5cc981fe951a702b288bbbff4e47c783c20320541478ee7e25a2e4c2(ad900c95deaee37bca4c24d8800a7dbb8431b1e4656f49833a4959300618e32e3);
 		e0705e68b0468289858b543f8a57f375a3b4f46391a72f94a28d82d6a3dacaa7.a250c60307248b6dac10c6d01c6738e44db4352444ba9863a495cfc9eda2eb7a7(a0499acfdd7ca92af21e6f85c0bfa74876fb455a1ea9dc65e91d44a7a5c9ed841);
 	}
+	//Delete this!
 	public static void main(String[] args){
 		LinkedList<String> bs = new LinkedList<String>();
 		bs.add("Frank");
