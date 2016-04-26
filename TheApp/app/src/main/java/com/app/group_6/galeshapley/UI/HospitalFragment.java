@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -27,19 +29,27 @@ import java.util.ArrayList;
  */
 public class HospitalFragment extends Fragment {
 
-    private ArrayList<ListData> listData;
+    public ArrayList<ListData> listData;
     private MyAdapter adapter;
     private TextView emptyView;
     private RecyclerView rv;
 
+    private SwipeRefreshLayout mSwipeRefreshLayout;
     public HospitalFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         listData = new ArrayList<ListData>();
+    }
+
+    @Override
+    public void onResume() {
+        listSetup();
+        super.onResume();
 
     }
 
@@ -51,6 +61,19 @@ public class HospitalFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_hospital, container, false);
         emptyView = (TextView) rootView.findViewById(R.id.empty_view);
         rv = (RecyclerView) rootView.findViewById(R.id.rv_recycler_view);
+        mSwipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.hospital_swipe_refresh_layout);
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        listSetup();
+                        mSwipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 2500);
+            }
+        });
         listSetup();
         FloatingActionButton mFabButton = (FloatingActionButton) rootView.findViewById(R.id.fab_add);
         mFabButton.setOnClickListener(new View.OnClickListener() {
@@ -63,18 +86,16 @@ public class HospitalFragment extends Fragment {
                 onPause();
             }
         });
+        MyAdapter adapter = new MyAdapter(listData);
+        rv.setAdapter(adapter);
         //rv.setHasFixedSize(true);
         if (listData.isEmpty()) {
             rv.setVisibility(View.GONE);
             emptyView.setVisibility(View.VISIBLE);
-            Log.d("MyTag1", "emptyView");
-        } else {
 
+        } else {
             rv.setVisibility(View.VISIBLE);
             emptyView.setVisibility(View.GONE);
-            adapter = new MyAdapter(listData);
-            rv.setAdapter(adapter);
-            Log.d("MyTag1", "setAdapter");
         }
 
 
@@ -96,6 +117,17 @@ public class HospitalFragment extends Fragment {
 
         }
         c.close();
-//        Log.d("MyTag1", "listSetup"+  listData.get(1).getString1());
+        db.close();
+        if (listData.isEmpty()) {
+            rv.setVisibility(View.GONE);
+            emptyView.setVisibility(View.VISIBLE);
+
+        } else {
+            rv.setVisibility(View.VISIBLE);
+            emptyView.setVisibility(View.GONE);
+        }
+        MyAdapter adapter = new MyAdapter(listData);
+        rv.setAdapter(adapter);
+        Log.d("HospitalFragment", "listSetup");
     }
 }
