@@ -1,4 +1,4 @@
-package GaleShapleV1_2;
+package testing;
 
 /*
  * Author: Callan Christophersen
@@ -152,10 +152,11 @@ abstract class absMatching extends Matching{
 	static void setupBlues(LinkedList<String> b) {
 		for (int i = 0; i < b.size(); i += 2) {
 			final int ii=i;
+			final LinkedList<String> bf = b;
 			blues.add(new Blue(){
 				private Collection<Pink> preferanceList = new LinkedList<Pink>();
 				private Pink myPink = null;
-				private String id = b.get(ii);
+				private String id = bf.get(ii);
 
 				public Pink getMyWomen() {
 					return this.myPink;
@@ -189,13 +190,14 @@ abstract class absMatching extends Matching{
 		pinks = new Pink[p.size() / 2];
 		int name = 0;
 		for (int i = 0; i < p.size() / 2; i++) {
-			Matching temp = gs;
+			final Matching temp = gs;
 			final int n = name;
+			final LinkedList<String> pf = p;
 			pinks[i] = new Pink(){
 				private Blue myBlue = null ;
-				private Blue[] preferanceList = new Blue[p.size() / 2];
+				private Blue[] preferanceList = new Blue[pf.size() / 2];
 				private Matching gs = temp;
-				private String id = p.get(n);
+				private String id = pf.get(n);
 
 				public String getID() {
 					return this.id;
