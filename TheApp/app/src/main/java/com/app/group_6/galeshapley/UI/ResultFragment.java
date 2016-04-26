@@ -3,11 +3,14 @@ package com.app.group_6.galeshapley.UI;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -35,15 +38,31 @@ public class ResultFragment extends Fragment {
     private MyAdapter adapter;
     private TextView emptyView;
     private RecyclerView rv;
+    private SwipeRefreshLayout mSwipeRefreshLayout;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        listData = new ArrayList<ListData>();
         View rootView = inflater.inflate(R.layout.fragment_result, container, false);
-        TextView emptyView = (TextView) rootView.findViewById(R.id.empty_view);
-        RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.rv_recycler_view);
+        emptyView = (TextView) rootView.findViewById(R.id.empty_view);
+        rv = (RecyclerView) rootView.findViewById(R.id.rv_recycler_view);
+        mSwipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.result_swipe_refresh_layout);
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        listSetup();
+                        mSwipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 2500);
+            }
+        });
+        listSetup();
         ArrayList<ListData> listData = new ArrayList<>();
-        FloatingActionButton mFabButton = (FloatingActionButton) rootView.findViewById(R.id.fab_add);
+        final FloatingActionButton mFabButton = (FloatingActionButton) rootView.findViewById(R.id.fab_add);
         mFabButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -86,18 +105,22 @@ public class ResultFragment extends Fragment {
                     Toast.makeText(getActivity().getApplicationContext(),
                             "The number of hospital and student must to equal to generate perfect match current hospital:"
                                     + hospitalList.size() + "current studdent:" + studentList.size(), Toast.LENGTH_LONG).show();
+                mFabButton.setEnabled(false);
             }
         });
+        //rv.setHasFixedSize(true);
+        MyAdapter adapter = new MyAdapter(listData);
+        rv.setAdapter(adapter);
         //rv.setHasFixedSize(true);
         if (listData.isEmpty()) {
             rv.setVisibility(View.GONE);
             emptyView.setVisibility(View.VISIBLE);
+
         } else {
             rv.setVisibility(View.VISIBLE);
             emptyView.setVisibility(View.GONE);
-            adapter = new MyAdapter(listData);
-            rv.setAdapter(adapter);
         }
+
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         rv.setLayoutManager(llm);
@@ -105,18 +128,39 @@ public class ResultFragment extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void onResume() {
+        listSetup();
+        super.onResume();
 
-    public class ResponseReceiver extends BroadcastReceiver {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            ArrayList<String> returnString = intent.getStringArrayListExtra("Result");
-            for (int i = 0; i < returnString.size(); i = i + 2) {
-                ListData resultItem = new ListData(returnString.get(i), returnString.get(i + 1));
-                listData.add(resultItem);
-            }
-            Log.d("MyTag2", "listData" + listData.toString());
-            adapter.notifyDataSetChanged();
-        }
     }
+
+    public void listSetup() {
+        SQLiteDatabase db = getActivity().openOrCreateDatabase("group6.db", Context.MODE_PRIVATE, null);
+        //Cursor c = db.rawQuery("SELECT * FROM hospital WHERE dummy <> 1", null);
+        Cursor c = db.query("result", null, null, null, null, null, null);
+        listData.clear();
+        while (c.moveToNext()) {
+            String hospital_name = c.getString(1);
+            String student_name = c.getString(2);
+            ListData temp = new ListData(hospital_name, student_name);
+            listData.add(temp);
+            Log.d("ResultFragment", "listSetup");
+        }
+        c.close();
+        db.close();
+        if (listData.isEmpty()) {
+            rv.setVisibility(View.GONE);
+            emptyView.setVisibility(View.VISIBLE);
+
+        } else {
+            rv.setVisibility(View.VISIBLE);
+            emptyView.setVisibility(View.GONE);
+        }
+        MyAdapter adapter = new MyAdapter(listData);
+        rv.setAdapter(adapter);
+        Log.d("ResultFragment", "listSetup");
+    }
+
+
 }

@@ -29,9 +29,6 @@
             </intent-filter>
         </activity>
 
-        <service
-            android:name=".Service.MatchingService"
-            android:exported="false" />
 
         <activity
             android:name=".UI.AddHospitalActivity"

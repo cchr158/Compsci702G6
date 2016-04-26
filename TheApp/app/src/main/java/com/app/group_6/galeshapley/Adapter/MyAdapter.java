@@ -38,6 +38,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.mTextView2.setText(mDataset.get(position).getString2());
     }
 
+
     @Override
     public int getItemCount() {
         return mDataset.size();
