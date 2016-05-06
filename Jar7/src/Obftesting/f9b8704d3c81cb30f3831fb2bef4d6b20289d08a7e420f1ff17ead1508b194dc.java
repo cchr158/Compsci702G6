@@ -1,4 +1,4 @@
-package Obftesting;
+
 
 /*
  * Author: Callan Christophersen
@@ -102,23 +102,23 @@ public final class f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b19
 	// Delete this!
 //	public static void main(String[] args) {
 //		LinkedList<String> bs = new LinkedList<String>();
-//		bs.add("Frank");
-//		bs.add("Kate,Mary,Rhea,Jill");
-//		bs.add("Dennis");
-//		bs.add("Mary,Jill,Rhea,Kate");
-//		bs.add("Mac");
-//		bs.add("Kate,Rhea,Jill,Mary");
-//		bs.add("Charlie");
-//		bs.add("Rhea,Mary,Kate,Jill");
+//		bs.add("Frank1");
+//		bs.add("Kate1,Mary2,Rhea3,Jill4");
+//		bs.add("Dennis2");
+//		bs.add("Mary2,Jill4,Rhea3,Kate1");
+//		bs.add("Mac3");
+//		bs.add("Kate1,Rhea3,Jill4,Mary2");
+//		bs.add("Charlie4");
+//		bs.add("Rhea3,Mary2,Kate1,Jill4");
 //		LinkedList<String> ps = new LinkedList<String>();
-//		ps.add("Rhea");
-//		ps.add("Frank,Mac,Dennis,Charlie");
-//		ps.add("Mary");
-//		ps.add("Mac,Charlie,Dennis,Frank");
-//		ps.add("Kate");
-//		ps.add("Dennis,Mac,Charlie,Frank");
-//		ps.add("Jill");
-//		ps.add("Charlie,Dennis,Frank,Mac");
+//		ps.add("Rhea3");
+//		ps.add("Frank1,Mac3,Dennis2,Charlie4");
+//		ps.add("Mary2");
+//		ps.add("Mac3,Charlie4,Dennis2,Frank1");
+//		ps.add("Kate1");
+//		ps.add("Dennis2,Mac3,Charlie4,Frank1");
+//		ps.add("Jill4");
+//		ps.add("Charlie4,Dennis2,Frank1,Mac3");
 //		String[] s = f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b194dc
 //				.a94ca56dc44ed8585ec115da27fcb5447dd3d78fd7cbae7cb9da8de0da64f0de3(bs, ps);
 //		for (int i = 0; i < s.length; i += 2) {
@@ -363,16 +363,17 @@ public final class f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b19
 						.add(new ec7d56a01607001e6401366417c5e2eb00ffa0df17ca1a9a831e0b32c8f11bf7() {
 							private Collection<bd38ed7732402b1a93261916c5906016cdccd1a9600b3864208246f6a3299bd0> acf67898b864f0e497fd7d89ab7af85289103f04fa5872d43e8871b0c61be6321 = new LinkedList<bd38ed7732402b1a93261916c5906016cdccd1a9600b3864208246f6a3299bd0>();
 							private bd38ed7732402b1a93261916c5906016cdccd1a9600b3864208246f6a3299bd0 a52eaf60aaccd24cdd769ea509fa7a63ae3b98076108e1d7b383a09161bd31231 = null;
-							private String a56145270ce6b3bebd1dd012b73948677dd618d496488bc608a3cb43ce3547dd = e0705e68b0468289858b543f8a57f375a3b4f46391a72f94a28d82d6a3dacaa7
-									.c6072170d758e5358d717360829bd1f9b1603b355b5f7fe375d1aabdca7a20de(
+							private String a56145270ce6b3bebd1dd012b73948677dd618d496488bc608a3cb43ce3547dd = /*e0705e68b0468289858b543f8a57f375a3b4f46391a72f94a28d82d6a3dacaa7
+									.c6072170d758e5358d717360829bd1f9b1603b355b5f7fe375d1aabdca7a20de(*/
 											a95fdfc0603842014203c0055c3a48bbc243c796a330059042dae795f5bdd5e40.get(
-													ab30538c578940847e83d4ed74e8c431455c94598b767d22caed22ba94494f7d5));
+													ab30538c578940847e83d4ed74e8c431455c94598b767d22caed22ba94494f7d5);
 
 							public bd38ed7732402b1a93261916c5906016cdccd1a9600b3864208246f6a3299bd0 b1ec0244f3d7dc42b65b48f2c51d66973038039fd7ec081ce8837225ce752906() {
 								return this.a52eaf60aaccd24cdd769ea509fa7a63ae3b98076108e1d7b383a09161bd31231;
 							}
 
 							public String c23f1e6dd1d3955d6dbbd69fa3480de68422324b709c924498bddf8cefa8f419() {
+								
 								String c6072170d758e5358d717360829bd1f9b1603b355b5f7fe375d1aabdca7a20de = "";
 								this.a56145270ce6b3bebd1dd012b73948677dd618d496488bc608a3cb43ce3547dd = this.a56145270ce6b3bebd1dd012b73948677dd618d496488bc608a3cb43ce3547dd
 										.toUpperCase();
@@ -391,7 +392,7 @@ public final class f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b19
 											% a386b628f37e03cd1a761ffc9835e8d4337e83b7c724f97229f6460a7b21e07c2
 													.length();
 								}
-								return c6072170d758e5358d717360829bd1f9b1603b355b5f7fe375d1aabdca7a20de;
+								return this.a56145270ce6b3bebd1dd012b73948677dd618d496488bc608a3cb43ce3547dd;
 							}
 
 							public Object ab3b25261a0d989a4747c40516497a5255f75011f3eeba62f692cf285b4356428(
@@ -451,10 +452,10 @@ public final class f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b19
 					private ec7d56a01607001e6401366417c5e2eb00ffa0df17ca1a9a831e0b32c8f11bf7[] acf67898b864f0e497fd7d89ab7af85289103f04fa5872d43e8871b0c61be6321 = new ec7d56a01607001e6401366417c5e2eb00ffa0df17ca1a9a831e0b32c8f11bf7[a358a8d11d58fe16bb544aa6ca624fe41de837322c8b5335f7137e1ddba192ce5
 							.size() / 2];
 					private f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b194dc ad77ba9b205b64d5c0813ae114d8a1772b026ce3fc1c0536aab3176366b3445a7 = a6864eb339b0e1f6e00d75293a8840abf069a2c0fe82e6e53af6ac099793c1d5;
-					private String a56145270ce6b3bebd1dd012b73948677dd618d496488bc608a3cb43ce3547dd = e0705e68b0468289858b543f8a57f375a3b4f46391a72f94a28d82d6a3dacaa7
-							.c6072170d758e5358d717360829bd1f9b1603b355b5f7fe375d1aabdca7a20de(
+					private String a56145270ce6b3bebd1dd012b73948677dd618d496488bc608a3cb43ce3547dd = /*e0705e68b0468289858b543f8a57f375a3b4f46391a72f94a28d82d6a3dacaa7
+							.c6072170d758e5358d717360829bd1f9b1603b355b5f7fe375d1aabdca7a20de(*/
 									a358a8d11d58fe16bb544aa6ca624fe41de837322c8b5335f7137e1ddba192ce5
-											.get(a9bd38c6328f08abef092431841c64d0507aac58bbde79f3cd21ab835fd1b61b1));
+											.get(a9bd38c6328f08abef092431841c64d0507aac58bbde79f3cd21ab835fd1b61b1);
 
 					public String c23f1e6dd1d3955d6dbbd69fa3480de68422324b709c924498bddf8cefa8f419() {
 						String c6072170d758e5358d717360829bd1f9b1603b355b5f7fe375d1aabdca7a20de = "";
@@ -474,7 +475,7 @@ public final class f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b19
 							a7b7581e2bae695f07eb86c83d28f9406ba3ee8661989af1f991a7eb43004f981 = ++a7b7581e2bae695f07eb86c83d28f9406ba3ee8661989af1f991a7eb43004f981
 									% a386b628f37e03cd1a761ffc9835e8d4337e83b7c724f97229f6460a7b21e07c2.length();
 						}
-						return c6072170d758e5358d717360829bd1f9b1603b355b5f7fe375d1aabdca7a20de;
+						return this.a56145270ce6b3bebd1dd012b73948677dd618d496488bc608a3cb43ce3547dd;
 					}
 
 					public ec7d56a01607001e6401366417c5e2eb00ffa0df17ca1a9a831e0b32c8f11bf7 a1547940f6f275c16a1ad1cf624db1cc73adec45288b9daf4134d30e1784f0aa8() {

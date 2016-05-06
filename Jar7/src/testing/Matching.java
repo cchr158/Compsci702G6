@@ -66,23 +66,23 @@ public class Matching{
 	
 	public static void main(String[] args){
 		LinkedList<String> bs = new LinkedList<String>();
-		bs.add("Frank");
-		bs.add("Kate,Mary,Rhea,Jill");
-		bs.add("Dennis");
-		bs.add("Mary,Jill,Rhea,Kate");
-		bs.add("Mac");
-		bs.add("Kate,Rhea,Jill,Mary");
-		bs.add("Charlie");
-		bs.add("Rhea,Mary,Kate,Jill");
+		bs.add("Frank1");
+		bs.add("Kate1,Mary2,Rhea3,Jill4");
+		bs.add("Dennis2");
+		bs.add("Mary2,Jill4,Rhea3,Kate1");
+		bs.add("Mac3");
+		bs.add("Kate1,Rhea3,Jill4,Mary2");
+		bs.add("Charlie4");
+		bs.add("Rhea3,Mary2,Kate1,Jill4");
 		LinkedList<String> ps = new LinkedList<String>();
-		ps.add("Rhea");
-		ps.add("Frank,Mac,Dennis,Charlie");
-		ps.add("Mary");
-		ps.add("Mac,Charlie,Dennis,Frank");
-		ps.add("Kate");
-		ps.add("Dennis,Mac,Charlie,Frank");
-		ps.add("Jill");
-		ps.add("Charlie,Dennis,Frank,Mac");
+		ps.add("Rhea3");
+		ps.add("Kate111,Mac3,Dennis2,Charlie4");
+		ps.add("Mary2");
+		ps.add("Mac3,Charlie4,Dennis2,Frank1");
+		ps.add("Kate1");
+		ps.add("Dennis2,Mac3,Charlie4,Frank1");
+		ps.add("Jill4");
+		ps.add("Charlie4,Dennis2,Frank1,Mac3");
 		String [] s = Matching.GS(bs, ps);
 		for(int i=0; i<s.length; i+=2){
 			System.out.println(s[i]+" "+s[i+1]);
