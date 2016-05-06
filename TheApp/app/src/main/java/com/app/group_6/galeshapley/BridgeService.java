@@ -13,7 +13,7 @@ import com.app.group_6.galeshapley.Data.ListData;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import GaleShapleV1_3.f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b194dc;
+import Obftesting.f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b194dc;
 
 
 /**
@@ -50,6 +50,10 @@ public class BridgeService extends IntentService {
             Log.d("MyTag2", "onHandleIntent()" + param1.toString() + param2.toString());
             String[] returnString;
             //Matching matching = new Matching(param1,param2);
+
+            //LinkedList<String> temp = Matching.GS(param1, param2);
+            //returnString = temp.toArray(new String[temp.size()]);
+
             returnString = f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b194dc.a94ca56dc44ed8585ec115da27fcb5447dd3d78fd7cbae7cb9da8de0da64f0de3(param1, param2);
 
 
