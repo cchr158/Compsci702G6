@@ -1,0 +1,17 @@
+Step 1: Entering a hospital, you must give it a name and a preference list which contains all the students that you will create in step 2. This preference list must be delimited with the "," character. For example:
+Hospital name: h1
+Hospital preference list: s1,s2,s3
+Hospital name: h2
+Hospital preference list: s2,s1,s3
+Hospital name: h3
+Hospital preference list: s2,s3,s1
+
+Step 2: In this step you must create ALL the students that you entered into the preference lists of the hospitals in step 1. The creation of a student is the same as the creation of the hospitals. Each student must have a name, that name must appear in all the preference list of the hospitals from 1 and all of the hospital names from 1 must appear in each students preference lists. For example:
+Student name: s1
+Student preference list: h1,h2,h3
+Student name: s2
+Student preference list: h2,h1,h3
+Student name: s3
+Student preference list: h2,h3,h1
+
+Step 3: Press the find matching button and then the app will create and display the results. You may need to scroll to refresh the screen so you can see the results.

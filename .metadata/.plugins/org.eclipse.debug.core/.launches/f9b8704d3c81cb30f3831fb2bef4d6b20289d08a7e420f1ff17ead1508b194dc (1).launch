@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/Jar7/src/f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b194dc.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="f9b8704d3c81cb30f3831fb2bef4d6b20289d08a7e420f1ff17ead1508b194dc"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Jar7"/>
+</launchConfiguration>
